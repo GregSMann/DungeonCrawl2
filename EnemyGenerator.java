@@ -6,7 +6,8 @@ import java.util.Random;
 public class EnemyGenerator {
     public static Enemy generate(int row, int col) {
         // TODO: replace this with your own code!
-        return new Enemy("Goblin", row, col, 20, 5, 3);
+        Enemy genEnemy= new Enemy("Goblin", row, col, 20, 5, 3);
+        return genEnemy;
     }
 }
 
