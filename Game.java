@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import ansi_terminal.*;
 
 public class Game {
+    private World world;
     private Room room;
     private Player player;
     private ArrayList<Box> boxes;
@@ -44,7 +45,8 @@ public class Game {
                         "##        ##                                                ",
                         "############                                                "
                 };
-        room = new Room (map1);
+        world.setCurrentRoom(world.firstRoom);
+        room = world.currentRoom;
         player = new Player(room.getPlayerStart());
         boxes = room.getBoxes();
         enemies = room.getEnemies();

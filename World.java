@@ -100,4 +100,7 @@ public class World {
     Room finalRoom = new Room(map3);
     Room firstRoom= new Room(map1);
     Room secondRoom= new Room(map2);
+    public void setCurrentRoom(Room room){
+        currentRoom=room;
+    }
 }

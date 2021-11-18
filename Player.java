@@ -4,6 +4,7 @@ import ansi_terminal.*;
 
 public class Player extends Character {
     private Inventory items;
+    Room currentRoom=null;
 
     public Player(Position start) {
         // our starting details
