@@ -1,6 +1,6 @@
 // Game.java
 // contains logic for running the Game
-
+import java.util.Scanner;
 import java.util.ArrayList;
 import ansi_terminal.*;
 
@@ -12,6 +12,17 @@ public class Game {
     private ArrayList<Enemy> enemies;
 
     public Game() {
+	
+	Scanner input = new Scanner(System.in);
+        
+	// Gets name and age of player 
+        System.out.println("You have been transported into the world of Fantasia. This world is not like the world you are accustomed to, as this world has creatures that do not exist in the world you come from. There are goblins, orksm and Ogres that lurk here. They terrorize the innocent people that live here. You need to defeat these creatures that live in this dungeon to help the people of Fantasia. You are the hero that they have been waiting for! Beat the Ogre boss and aid the people of Fantasia!\nWhat is your name Good Hero?: ");
+        static String playerName1 = input.nextLine();
+
+        System.out.println("What is your age?");
+        static int playerAge1 = input.nextInt();
+        
+	
         world.setCurrentRoom(world.firstRoom);
         room = world.currentRoom;
         player = new Player(room.getPlayerStart());
