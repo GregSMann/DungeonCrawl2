@@ -29,7 +29,8 @@ public class Game {
         boxes = room.getBoxes();
         enemies = room.getEnemies();
     }
-
+    
+ 
     // prints a help menu to the left of the map
     private void showHelp() {
         String[] cmds = {"Commands:",
@@ -41,6 +42,7 @@ public class Game {
                          "Equip weapon: w",
                          "Equip armor: a",
                          "Quit: q"
+			 "Save: s"
         };
         Terminal.setForeground(Color.GREEN);
         for (int row = 0; row < cmds.length; row++) {
