@@ -10,6 +10,7 @@ public class Game {
     private Player player;
     private ArrayList<Box> boxes;
     private ArrayList<Enemy> enemies;
+    private ArrayList<Portal> portals;
 
     public Game() {
 	
@@ -17,10 +18,10 @@ public class Game {
         
 	// Gets name and age of player 
         System.out.println("You have been transported into the world of Fantasia. This world is not like the world you are accustomed to, as this world has creatures that do not exist in the world you come from. There are goblins, orksm and Ogres that lurk here. They terrorize the innocent people that live here. You need to defeat these creatures that live in this dungeon to help the people of Fantasia. You are the hero that they have been waiting for! Beat the Ogre boss and aid the people of Fantasia!\nWhat is your name Good Hero?: ");
-        static String playerName1 = input.nextLine();
+        String playerName1 = input.nextLine();
 
         System.out.println("What is your age?");
-        static int playerAge1 = input.nextInt();
+        int playerAge1 = input.nextInt();
         
 	
         world.setCurrentRoom(world.firstRoom);
@@ -28,6 +29,7 @@ public class Game {
         player = new Player(room.getPlayerStart());
         boxes = room.getBoxes();
         enemies = room.getEnemies();
+        portals = room.getPortals();
     }
     
  
@@ -41,7 +43,8 @@ public class Game {
                          "List items: l",
                          "Equip weapon: w",
                          "Equip armor: a",
-                         "Quit: q"
+                         "Quit: q",
+                "Enter Portal: e",
 			 "Save: s"
         };
         Terminal.setForeground(Color.GREEN);
@@ -79,6 +82,16 @@ public class Game {
                 setStatus("This is too large for you to add!");
             }
             Terminal.pause(1.25);
+        }
+    }
+    private void enter(){
+        Portal door = checkForPortal();
+        if (door == null){
+            setStatus("There isn't a portal here!");
+        }else{
+            world.setCurrentRoom(door.destinationRoom);
+            redrawMapAndHelp();
+
         }
     }
 
@@ -180,6 +193,17 @@ public class Game {
 
         return true;
     }
+    private Portal checkForPortal() {
+        Position playerLocation = player.getPosition();
+
+        for (Portal portal : portals) {
+            if (playerLocation.equals(portal.getPosition())) {
+                return portal;
+            }
+        }
+
+        return null;
+    }
 
     public void run() {
         // draw these for the first time now
@@ -220,6 +244,11 @@ public class Game {
             if (thingHere != null) {
                 setStatus("Here you find: " + thingHere.getItem().getName());
             }
+            Portal checkPortal=checkForPortal();
+            if (checkPortal != null){
+                setStatus("There is a portal here! Go through it if you dare!");
+            }
+
         }
     }
 }

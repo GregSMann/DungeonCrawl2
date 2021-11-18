@@ -64,6 +64,22 @@ public class Room {
 
         return enemies;
     }
+    public ArrayList<Portal> getPortals() {
+        World world=new World();
+        ArrayList<Portal> portals = new ArrayList<Portal>();
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                if (grid[row].charAt(col) == '0') {
+                    portals.add(new Portal(row, col, world.secondRoom));
+                } else if(grid[row].charAt(col) =='O'){
+                    portals.add(new Portal(row, col, world.finalRoom));
+
+                }
+            }
+        }
+
+        return portals ;
+    }
 
     public int getRows() {
         return rows;
