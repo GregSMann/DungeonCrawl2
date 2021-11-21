@@ -28,7 +28,7 @@ public class Game {
         room = world.currentRoom;
         player = new Player(room.getPlayerStart());
         boxes = room.getBoxes();
-        enemies = room.getEnemies();
+        enemies = room.getEnemies(world.currentRoom);
         portals = room.getPortals();
     }
     

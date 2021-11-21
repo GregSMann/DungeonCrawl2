@@ -52,12 +52,13 @@ public class Room {
     }
 
     // returns a set of enemies from this map, similarly to the boxes above
-    public ArrayList<Enemy> getEnemies() {
+    public ArrayList<Enemy> getEnemies(Room currentRoom) {
+
         ArrayList<Enemy> enemies = new ArrayList<Enemy>();
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
                 if (grid[row].charAt(col) == '*') {
-                    enemies.add(EnemyGenerator.generate(row, col));
+                    enemies.add(EnemyGenerator.generate(row, col, currentRoom));
                 }
             }
         }
