@@ -69,7 +69,7 @@ public class World {
                 "               ####################                        ",
                 "               ##                ##                        ",
                 "               ##                ##                        ",
-                "               ##        *       ##                        ",
+                "               ##        B       ##                        ",
                 "               ##                ##                        ",
                 "               ##                ##                        ",
                 "               #########  #########                        ",
@@ -82,7 +82,7 @@ public class World {
                 "                   ##  ##############                      ",
                 "                   ##  ##                                  ",
                 "                   ##  ##                                  ",
-                "    #################  ##                  *               ",
+                "    #################  ##                                  ",
                 "    ##     *           ##                                  ",
                 "    ##  #################                                  ",
                 "    ##  ##                                                 ",
@@ -97,9 +97,9 @@ public class World {
                 "##        ##                                                ",
                 "############                                                "
     };
-    Room finalRoom = new Room(map3);
-    Room firstRoom= new Room(map1);
-    Room secondRoom= new Room(map2);
+    Room finalRoom = new Room(map3, worldDifficulty.Hard);
+    Room firstRoom= new Room(map1, worldDifficulty.Easy);
+    Room secondRoom= new Room(map2, worldDifficulty.Normal);
     public void setCurrentRoom(Room room){
         currentRoom=room;
     }

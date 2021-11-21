@@ -5,10 +5,9 @@ import java.util.Random;
 
 public class EnemyGenerator {
     public static Enemy generate(int row, int col, Room room) {
-        World exampleWorld = new World();
         Enemy genEnemy=new Enemy("Lost Goblin",row,col,1,1,1);
         // TODO: replace this with your own code!
-        if (room == exampleWorld.firstRoom) {
+        if (room.getWorldDifficulty()==worldDifficulty.Easy) {
 
 
             int b = (int) (Math.random() * (3 - 1 + 1) + 1);
@@ -27,7 +26,7 @@ public class EnemyGenerator {
 
                 }
         }
-        if (room == exampleWorld.secondRoom) {
+        if (room.getWorldDifficulty()==worldDifficulty.Normal) {
 
             int b = (int) (Math.random() * (3 - 1 + 1) + 1);
             switch (b) {
@@ -44,7 +43,7 @@ public class EnemyGenerator {
 
             }
 
-        }if (room == exampleWorld.finalRoom) {
+        }if (room.getWorldDifficulty()==worldDifficulty.Hard) {
 
             int b = (int) (Math.random() * (3 - 1 + 1) + 1);
             switch (b) {
