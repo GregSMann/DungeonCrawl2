@@ -144,7 +144,10 @@ public class Game {
                 player.getInventory().equipArmor();
                 redrawMapAndHelp();
                 break;
-
+            case u:
+                player.getInventory().useItem(player);
+                redrawMapAndHelp();
+                break;
             // handle movement
             case LEFT: player.move(0, -1, room);
                 break;
