@@ -12,6 +12,9 @@ public abstract class Character extends Entity {
         super(row, col, display, color);
         this.hp = hp;
     }
+    private void heal(Item item){
+       this.hp=hp+item.getStrength();
+    }
 
     // get the hp, damage, protection and name of character
     public int getHealth() {

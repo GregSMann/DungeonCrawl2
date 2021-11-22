@@ -197,5 +197,12 @@ public class Inventory {
             return items.get(realIndex);
         }
     }
-}
+    public void useItem(Player player){
+       Item healingItem=pickItem(ItemType.Healing);
+         player.heal(healingItem);
+
+        }
+    }
+
+
 
