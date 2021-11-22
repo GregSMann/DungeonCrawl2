@@ -23,8 +23,7 @@ public class Game {
         System.out.println("What is your age?");
         int playerAge1 = input.nextInt();
         
-	
-        world.setCurrentRoom(world.firstRoom);
+	    world.setCurrentRoom(world.firstRoom);
         room = world.currentRoom;
         player = new Player(room.getPlayerStart());
         boxes = room.getBoxes(world.currentRoom);

@@ -102,7 +102,7 @@ public class World {
     Room firstRoom= new Room(map1, worldDifficulty.Easy);
     Room secondRoom= new Room(map2, worldDifficulty.Normal);
     public void setCurrentRoom(Room room){
-        currentRoom=room;
+        this.currentRoom=room;
     }
     public Room getCurrentRoom(){ return this.currentRoom; }
 }
