@@ -16,16 +16,17 @@ public class Game {
     private ArrayList<Portal> portals;
 
     public Game() {
-	
+	world = new World();
 	Scanner input = new Scanner(System.in);
         
-	// Gets name and age of player 
+	// Gets name and age of player
+	Terminal.cookedMode(); 
         System.out.println("You have been transported into the world of Fantasia. This world is not like the world you are accustomed to, as this world has creatures that do not exist in the world you come from. There are goblins, orksm and Ogres that lurk here. They terrorize the innocent people that live here. You need to defeat these creatures that live in this dungeon to help the people of Fantasia. You are the hero that they have been waiting for! Beat the Ogre boss and aid the people of Fantasia!\nWhat is your name Good Hero?: ");
         String playerName1 = input.nextLine();
 
         System.out.println("What is your age?");
         int playerAge1 = input.nextInt();
-        
+	Terminal.rawMode();
         room = world.currentRoom;
         player = new Player(room.getPlayerStart());
         boxes = room.getBoxes(world.currentRoom);
@@ -98,12 +99,12 @@ public class Game {
     }
     //method to save the game info into a file
     public void save(PrintWriter pw){
-    	pw.println(playerName1);
-	pw.println(playerAge1);
+    	//pw.println(playerName1);
+	//pw.println(playerAge1);
 	pw.println(player.getHealth());
 	pw.println(player.getRow());
 	pw.println(player.getCol());
-	pw.println(World.getRoom());
+	//pw.println(World.getRoom());
 	pw.println(items.getItems());
 	
 
@@ -127,14 +128,14 @@ public class Game {
     private boolean handleKey(Key key) {
         switch (key) {
 //need to place the save method into case s
-   	    case s:
-                try{
-			PrintWriter pw = new PrintWriter(new File("save.txt"))
-			Game.save(pw);
-			pw.close();
-		}catch (FileNotFountException e){
-			System.out.print("Ay Yo That Aint Saved Ya Dig!");
-		}
+   	   // case s:
+               // try{
+		//	PrintWriter pw = new PrintWriter(new File("save.txt"));
+		//	Game.save(pw);
+		//	pw.close();
+		//}catch (FileNotFountException e){
+		//	System.out.print("Ay Yo That Aint Saved Ya Dig!");
+		//}
 		
             case p:
                 pickup();
