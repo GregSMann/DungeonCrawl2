@@ -105,8 +105,8 @@ public class Game {
 	//pw.println(player.getRow());
 	//pw.println(player.getCol());
 	//pw.println(World.getRoom());
-	pw.println();
-	pw.println(items.getItems());
+	//pw.println();
+	//pw.println(items.getItems());
 	
 	
 
