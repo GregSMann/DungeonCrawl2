@@ -43,9 +43,10 @@ public class Game {
                          "List items: l",
                          "Equip weapon: w",
                          "Equip armor: a",
+                         "Use Item: u",
                          "Quit: q",
-                "Enter Portal: e",
-			 "Save: s"
+                         "Enter Portal: e",
+                         "Save: s"
         };
         Terminal.setForeground(Color.GREEN);
         for (int row = 0; row < cmds.length; row++) {
