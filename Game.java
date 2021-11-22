@@ -13,7 +13,7 @@ public class Game {
     private ArrayList<Portal> portals;
 
     public Game() {
-	
+	world = new World();
 	Scanner input = new Scanner(System.in);
         
 	// Gets name and age of player 
@@ -22,7 +22,7 @@ public class Game {
 
         System.out.println("What is your age?");
         int playerAge1 = input.nextInt();
-        
+
         room = world.currentRoom;
         player = new Player(room.getPlayerStart());
         boxes = room.getBoxes(world.currentRoom);
