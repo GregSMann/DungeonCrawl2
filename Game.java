@@ -94,6 +94,9 @@ public class Game {
         }else{
             world.setCurrentRoom(door.destinationRoom);
             room=world.currentRoom;
+            enemies= room.getEnemies(world.currentRoom);
+            boxes=room.getBoxes(world.currentRoom);
+            portals=room.getPortals();
             redrawMapAndHelp();
 
         }

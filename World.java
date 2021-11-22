@@ -104,5 +104,6 @@ public class World {
     public void setCurrentRoom(Room room){
         this.currentRoom=room;
     }
+
     public Room getCurrentRoom(){ return this.currentRoom; }
 }
