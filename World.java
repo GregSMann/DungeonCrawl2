@@ -1,5 +1,4 @@
 public class World {
-    Room currentRoom=null;
     String[] map1=
 
             {  "##################              ######################    ",
@@ -97,10 +96,13 @@ public class World {
                 "##        ##                                                ",
                 "############                                                "
     };
+    Room currentRoom=null;
+
     Room finalRoom = new Room(map3, worldDifficulty.Hard);
     Room firstRoom= new Room(map1, worldDifficulty.Easy);
     Room secondRoom= new Room(map2, worldDifficulty.Normal);
     public void setCurrentRoom(Room room){
         currentRoom=room;
     }
+    public Room getCurrentRoom(){ return this.currentRoom; }
 }
