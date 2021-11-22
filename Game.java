@@ -1,5 +1,8 @@
 // Game.java
 // contains logic for running the Game
+import java.io.PrintWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
 import ansi_terminal.*;
@@ -94,7 +97,11 @@ public class Game {
 
         }
     }
-
+    //method to save the game info into a file
+    public void save(PrintWriter pw){
+    	pw.println();
+    
+    }
     // code for when the player tries to drop an item
     private void drop() {
         if (checkForBox() == null) {
@@ -112,6 +119,9 @@ public class Game {
     // handle the key which was read - return false if we quit the game
     private boolean handleKey(Key key) {
         switch (key) {
+//need to place the save method into case s
+   	    case s:
+                
             case p:
                 pickup();
                 break;
