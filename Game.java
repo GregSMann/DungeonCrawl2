@@ -26,8 +26,6 @@ public class Game {
         System.out.println("What is your age?");
         int playerAge1 = input.nextInt();
         
-	
-        world.setCurrentRoom(world.firstRoom);
         room = world.currentRoom;
         player = new Player(room.getPlayerStart());
         boxes = room.getBoxes(world.currentRoom);
@@ -46,9 +44,10 @@ public class Game {
                          "List items: l",
                          "Equip weapon: w",
                          "Equip armor: a",
+                         "Use Item: u",
                          "Quit: q",
-                "Enter Portal: e",
-			 "Save: s"
+                         "Enter Portal: e",
+                         "Save: s"
         };
         Terminal.setForeground(Color.GREEN);
         for (int row = 0; row < cmds.length; row++) {

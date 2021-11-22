@@ -1,5 +1,5 @@
 public class World {
-    Room currentRoom=null;
+
     String[] map1=
 
             {  "##################              ######################    ",
@@ -19,7 +19,7 @@ public class World {
             "                       ##                                 ##",
             "                       ##                                 ##",
             "    #####################                  *              ##",
-            "    ##                                                    0#",
+            "    ##                                                  0 ##",
             "    ##  #################                                 ##",
             "    ##  ##             ##                                 ##",
             "    ##  ##             #################  ##################",
@@ -43,7 +43,7 @@ public class World {
             "##################   ######################       ##  ##    ",
             "    ###################                  ##       ##  ##    ",
             "    ##                    *  i           ##       ##  ##    ",
-            "    ##    i       ## ##                  ##       ##  ##    ",
+            "    ##    i       #####                  ##       ##  ##    ",
             "    ##            ## ##############  ######       ##  ##    ",
             "    ##            ##             ##  ##           ##  ##    ",
             "    ##            ##             ##  ##           ##  ##    ",
@@ -62,7 +62,7 @@ public class World {
             "######  ####                     ##  i  *      ##           ",
             "##        ##                     ##            ##           ",
             "## i  *   ##                     ################           ",
-            "##   0    ##                                                ",
+            "##   O    ##                                                ",
             "############                                                "
     };
     String[] map3= {
@@ -97,10 +97,12 @@ public class World {
                 "##        ##                                                ",
                 "############                                                "
     };
+    Room currentRoom=new Room(map1, worldDifficulty.Easy);
+
     Room finalRoom = new Room(map3, worldDifficulty.Hard);
-    Room firstRoom= new Room(map1, worldDifficulty.Easy);
     Room secondRoom= new Room(map2, worldDifficulty.Normal);
     public void setCurrentRoom(Room room){
-        currentRoom=room;
+        this.currentRoom=room;
     }
+    public Room getCurrentRoom(){ return this.currentRoom; }
 }

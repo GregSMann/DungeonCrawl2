@@ -73,7 +73,7 @@ public class Room {
             for (int col = 0; col < cols; col++) {
                 if (grid[row].charAt(col) == '0') {
                     portals.add(new Portal(row, col, world.secondRoom));
-                } else if(grid[row].charAt(col) =='O'){
+                }else if(grid[row].charAt(col) =='O'){
                     portals.add(new Portal(row, col, world.finalRoom));
 
                 }
