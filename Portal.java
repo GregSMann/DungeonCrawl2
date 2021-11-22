@@ -6,7 +6,7 @@ public class Portal extends Entity{
 
     public Portal(int r, int c, Room destinationRoom){
         super(r, c, '0', Color.BLUE);
-        destinationRoom=destinationRoom;
+        this.destinationRoom=destinationRoom;
 
     }
 
