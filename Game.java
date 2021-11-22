@@ -138,7 +138,9 @@ public class Game {
 		//}catch (FileNotFountException e){
 		//	System.out.print("Ay Yo That Aint Saved Ya Dig!");
 	//	}
-		
+            case e:
+                enter();
+            break;
             case p:
                 pickup();
                 break;
