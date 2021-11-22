@@ -93,6 +93,7 @@ public class Game {
             setStatus("There isn't a portal here!");
         }else{
             world.setCurrentRoom(door.destinationRoom);
+            room=world.currentRoom;
             redrawMapAndHelp();
 
         }
