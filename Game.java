@@ -98,17 +98,17 @@ public class Game {
         }
     }
     //method to save the game info into a file
-    public void save(PrintWriter pw){
-    	pw.println(playerName1);
-	pw.println(playerAge1);
-	pw.println(player.getHealth());
-	pw.println(player.getRow());
-	pw.println(player.getCol());
-	pw.println(World.getRoom());
+  //  public void save(PrintWriter pw){
+    //	pw.println(playerName1);
+	//pw.println(playerAge1);
+	//pw.println(player.getHealth());
+	//pw.println(player.getRow());
+	//pw.println(player.getCol());
+	//pw.println(World.getRoom());
 	
 
     
-    }
+   // }
     // code for when the player tries to drop an item
     private void drop() {
         if (checkForBox() == null) {
@@ -127,14 +127,14 @@ public class Game {
     private boolean handleKey(Key key) {
         switch (key) {
 //need to place the save method into case s
-   	    case s:
-                try{
-			PrintWriter pw = new PrintWriter(new File("save.txt"))
-                    Game.save(pw);
-			pw.close();
-		}catch (FileNotFountException e){
-			System.out.print("Ay Yo That Aint Saved Ya Dig!");
-		}
+   	    //case s:
+          //      try{
+			//PrintWriter pw = new PrintWriter(new File("save.txt"));
+              //      Game.save(pw);
+			//pw.close();
+		//}catch (FileNotFountException e){
+		//	System.out.print("Ay Yo That Aint Saved Ya Dig!");
+	//	}
 		
             case p:
                 pickup();
