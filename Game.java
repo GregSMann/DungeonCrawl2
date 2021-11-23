@@ -112,7 +112,7 @@ public class Game {
 	pw.println(player.getHealth());
 	pw.println(player.getRow());
 	pw.println(player.getCol());
-	pw.println(world.getCurrentRoom());
+	pw.println(room.getWorldDifficulty());
 	
           for (Enemy i : enemies){
                   pw.println(i.getName());
