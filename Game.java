@@ -16,6 +16,7 @@ public class Game {
     private ArrayList<Portal> portals;
     private String playerName1;
     private int playerAge1;
+    private String saveExt
 
     public Game() {
 	world = new World();
@@ -194,6 +195,14 @@ public class Game {
             // and finally the quit command
             case q:
                 return false;
+
+	    case s:
+		Scanner sc = new Scanner(System.in());
+		System.out.print("Enter a name for this save file: ");
+		saveExt = sc.nextLine();
+		PrintWriter pw = new PrintWriter(new File("saves/save" + saveExt + ".txt"));
+		save(pw);
+
         }
 
         return true;
