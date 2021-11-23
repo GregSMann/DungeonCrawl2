@@ -101,6 +101,7 @@ public class World {
 
     Room finalRoom = new Room(map3, worldDifficulty.Hard);
     Room secondRoom= new Room(map2, worldDifficulty.Normal);
+
     public void setCurrentRoom(Room room){
         this.currentRoom=room;
     }
