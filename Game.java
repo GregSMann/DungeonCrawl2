@@ -92,6 +92,7 @@ public class Game {
         if (door == null){
             setStatus("There isn't a portal here!");
         }else{
+            portals.remove(door);
             world.setCurrentRoom(door.destinationRoom);
             room=world.currentRoom;
             enemies= room.getEnemies(world.currentRoom);
