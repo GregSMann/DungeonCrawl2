@@ -113,6 +113,15 @@ public class Game {
 	//pw.println();
 	//pw.println(items.getItems());
 	
+        //  for (Enemy i : enemies){
+        //          pw.println(i.getName);
+        //          pw.println(i.gethp);
+        //          pw.println(i.getRow);
+        //          pw.println(i.getCol);
+        //
+        //  }
+        //pw.println();
+        //pw.println(items.getItems());
 	
 
     
