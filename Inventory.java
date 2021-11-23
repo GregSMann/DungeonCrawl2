@@ -95,12 +95,13 @@ public class Inventory {
         return num;
     }
 
-    public void  printItems(){
+    public ArrayList<String> printItems(){
 	    ArrayList<String> saveItems = new ArrayList<String>();
 
     	for (Item i : items){
 		saveItems.add("" + i.toString());
 	}
+	return saveItems;
     }
 
     // stay here until the user is ready to go back

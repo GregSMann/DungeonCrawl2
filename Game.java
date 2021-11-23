@@ -122,7 +122,7 @@ public class Game {
         
           }
         //pw.println();
-        //pw.println(items.getItems());
+        pw.println(player.getInventory().printItems());
 	
 
     
