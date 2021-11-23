@@ -20,13 +20,13 @@ public class Enemy extends Character {
     }
     //public int gethp(){
     //	return hp;
-    }
-    public int getRow(){
-    	return row;
-    }
-    public int getCol(){
-    	return col;
-    }
+    //}
+    //public int getRow(){
+    //	return row;
+    //}
+    //public int getCol(){
+    //	return col;
+    //}
     @Override
     public int getDamage() {
         return damage;

@@ -95,7 +95,7 @@ public class Inventory {
         return num;
     }
 
-    public ArrayList<String> printItems(){
+    public void  printItems(){
 	    ArrayList<String> saveItems = new ArrayList<String>();
 
     	for (Item i : items){
@@ -211,7 +211,8 @@ public class Inventory {
          items.remove(healingItem);
         }
 
-    }
+}
+
 
 
 

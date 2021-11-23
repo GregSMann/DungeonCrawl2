@@ -122,7 +122,7 @@ public class Game {
         
           }
         //pw.println();
-        pw.println(items.getItems());
+        //pw.println(items.getItems());
 	
 
     
@@ -197,15 +197,18 @@ public class Game {
                 return false;
 
 	    case s:
-		Scanner sc = new Scanner(System.in());
+		Scanner sc = new Scanner(System.in);
+		Terminal.cookedMode();
 		System.out.print("Enter a name for this save file: ");
 		saveExt = sc.nextLine();
 		try{
 			PrintWriter pw = new PrintWriter(new File("saves/save" + saveExt + ".txt"));
 			save(pw);
 			pw.close();
+			Terminal.rawMode();
 		}catch (FileNotFoundException e) {
 			System.out.println("Failed to save file!");
+			Terminal.rawMode();
 		}
 
         }
