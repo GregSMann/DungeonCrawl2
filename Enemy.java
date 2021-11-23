@@ -18,7 +18,15 @@ public class Enemy extends Character {
         this.battleActive = false;
         rng = new Random();
     }
-
+    public int gethp(){
+    	return hp;
+    }
+    public int getRow(){
+    	return row;
+    }
+    public int getCol(){
+    	return col;
+    }
     @Override
     public int getDamage() {
         return damage;

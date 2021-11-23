@@ -113,15 +113,15 @@ public class Game {
 	pw.println(player.getCol());
 	pw.println(world.getCurrentRoom());
 	
-        //  for (Enemy i : enemies){
-        //          pw.println(i.getName);
-        //          pw.println(i.gethp);
-        //          pw.println(i.getRow);
-        //          pw.println(i.getCol);
-        //
-        //  }
+          for (Enemy i : enemies){
+                  pw.println(i.getName());
+                  pw.println(i.gethp());
+                  pw.println(i.getRow());
+                  pw.println(i.getCol());
+        
+          }
         //pw.println();
-        //pw.println(items.getItems());
+        pw.println(items.getItems());
 	
 
     
