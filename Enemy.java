@@ -18,8 +18,8 @@ public class Enemy extends Character {
         this.battleActive = false;
         rng = new Random();
     }
-    public int gethp(){
-    	return hp;
+    //public int gethp(){
+    //	return hp;
     }
     public int getRow(){
     	return row;

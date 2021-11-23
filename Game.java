@@ -16,7 +16,7 @@ public class Game {
     private ArrayList<Portal> portals;
     private String playerName1;
     private int playerAge1;
-    private String saveExt
+    private String saveExt;
 
     public Game() {
 	world = new World();
@@ -116,7 +116,7 @@ public class Game {
 	
           for (Enemy i : enemies){
                   pw.println(i.getName());
-                  pw.println(i.gethp());
+                  pw.println(i.getHealth());
                   pw.println(i.getRow());
                   pw.println(i.getCol());
         
