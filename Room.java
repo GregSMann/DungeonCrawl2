@@ -113,12 +113,16 @@ public class Room {
     public worldDifficulty getWorldDifficulty() {
         return this.worldDifficulty;
     }
+    public String[] getGrid(){
+        return this.grid;
+    }
 
     // returns if a given cell in the map is walkable or not
     public boolean canGo(int row, int col) {
         return grid[row].charAt(col) != '#';
     }
-}
+    }
+
 
 
 
