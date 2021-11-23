@@ -206,8 +206,9 @@ public class Inventory {
     public void useItem(Player player){
        Item healingItem=pickItem(ItemType.Healing);
          player.heal(healingItem);
-
+         items.remove(healingItem);
         }
+
     }
 
 

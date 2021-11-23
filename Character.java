@@ -12,9 +12,7 @@ public abstract class Character extends Entity {
         super(row, col, display, color);
         this.hp = hp;
     }
-    private void heal(Item item){
-       this.hp=hp+item.getStrength();
-    }
+
 
     // get the hp, damage, protection and name of character
     public int getHealth() {
@@ -78,6 +76,11 @@ public abstract class Character extends Entity {
         System.out.printf("Press any key to return...\n\r");
         Terminal.getKey();
         return true;
+    }
+    public void heal(Item item){
+        int value=this.getHealth();
+        int itemStrength=item.getStrength();
+        this.hp=value+itemStrength;
     }
 }
 
