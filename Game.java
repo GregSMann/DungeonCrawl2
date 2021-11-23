@@ -14,6 +14,8 @@ public class Game {
     private ArrayList<Box> boxes;
     private ArrayList<Enemy> enemies;
     private ArrayList<Portal> portals;
+    private String playerName1;
+    private int playerAge1;
 
     public Game() {
 	world = new World();
@@ -103,15 +105,13 @@ public class Game {
         }
     }
     //method to save the game info into a file
-  //  public void save(PrintWriter pw){
-    //	pw.println(playerName1);
-	//pw.println(playerAge1);
-	//pw.println(player.getHealth());
-	//pw.println(player.getRow());
-	//pw.println(player.getCol());
-	//pw.println(World.getRoom());
-	//pw.println();
-	//pw.println(items.getItems());
+    public void save(PrintWriter pw){
+    	pw.println(playerName1);
+	pw.println(playerAge1);
+	pw.println(player.getHealth());
+	pw.println(player.getRow());
+	pw.println(player.getCol());
+	pw.println(world.getCurrentRoom());
 	
         //  for (Enemy i : enemies){
         //          pw.println(i.getName);
@@ -125,7 +125,7 @@ public class Game {
 	
 
     
-   // }
+   }
     // code for when the player tries to drop an item
     private void drop() {
         if (checkForBox() == null) {
