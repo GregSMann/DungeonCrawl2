@@ -200,8 +200,13 @@ public class Game {
 		Scanner sc = new Scanner(System.in());
 		System.out.print("Enter a name for this save file: ");
 		saveExt = sc.nextLine();
-		PrintWriter pw = new PrintWriter(new File("saves/save" + saveExt + ".txt"));
-		save(pw);
+		try{
+			PrintWriter pw = new PrintWriter(new File("saves/save" + saveExt + ".txt"));
+			save(pw);
+			pw.close();
+		}catch (FileNotFoundException e) {
+			System.out.println("Failed to save file!");
+		}
 
         }
 
