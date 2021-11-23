@@ -14,7 +14,7 @@ public class Game {
     private ArrayList<Box> boxes;
     private ArrayList<Enemy> enemies;
     private ArrayList<Portal> portals;
-    public String playerName1;
+    private String playerName1;
     private int playerAge1;
     private String saveExt;
 
