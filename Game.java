@@ -17,6 +17,7 @@ public class Game {
     private String playerName1;
     private int playerAge1;
     private String saveExt;
+    private String loadExt;
 
     public Game() {
 	world = new World();
@@ -37,6 +38,12 @@ public class Game {
         portals = room.getPortals();
     }
     
+    //Game Constructor to load a saved game
+    public Game(Scanner in){
+    	playerName1 = in.nextLine();
+	playerAge1 = in.nextInt();
+
+    }  
  
     // prints a help menu to the left of the map
     private void showHelp() {
@@ -45,13 +52,14 @@ public class Game {
                          "Move: Arrow Keys",
                          "Pickup an item: p",
                          "Drop an item: d",
-                         "List items: l",
+                         "List items: i",
                          "Equip weapon: w",
                          "Equip armor: a",
                          "Use Item: u",
                          "Quit: q",
                          "Enter Portal: e",
-                         "Save: s"
+                         "Save: s",
+			 "Load a Game: l"
         };
         Terminal.setForeground(Color.GREEN);
         for (int row = 0; row < cmds.length; row++) {
@@ -116,7 +124,7 @@ public class Game {
 	pw.println(player.getHealth());
 	pw.println(player.getRow());
 	pw.println(player.getCol());
-	pw.println(world.getCurrentRoom());
+	pw.println(room.getWorldDifficulty());
 	
           for (Enemy i : enemies){
                   pw.println(i.getName());
@@ -131,6 +139,14 @@ public class Game {
 
     
    }
+   //Method code to load a saved game
+   public void load(){
+   	
+   
+   
+   }
+
+
     // code for when the player tries to drop an item
     private void drop() {
         if (checkForBox() == null) {
@@ -164,7 +180,7 @@ public class Game {
                 pickup();
                 break;
 
-            case l:
+            case i:
                 player.getInventory().print();
                 redrawMapAndHelp();
                 break;
@@ -199,7 +215,7 @@ public class Game {
             // and finally the quit command
             case q:
                 return false;
-
+            //save key
 	    case s:
 		Scanner sc = new Scanner(System.in);
 		Terminal.cookedMode();
@@ -209,11 +225,30 @@ public class Game {
 			PrintWriter pw = new PrintWriter(new File("saves/save" + saveExt + ".txt"));
 			save(pw);
 			pw.close();
+			
 			Terminal.rawMode();
+			System.out.println("Press any Key to Return");
+
 		}catch (FileNotFoundException e) {
 			System.out.println("Failed to save file!");
 			Terminal.rawMode();
 		}
+	    //key to load a game " not completed"
+	    case l:
+	       Scanner scanner = new Scanner(System.in);
+	       Terminal.cookedMode();
+	       System.out.print("Enter the name of the save file you want to load: ");
+	       loadExt = scanner.nextLine();
+	       try {
+		       Scanner in = new Scanner(new File("saves/save" + loadExt + ".txt"));
+		       Game loadedGame = new Game(in);
+		       Terminal.rawMode();
+	       
+	       }catch (FileNotFoundException d){
+		       System.out.println("Failed to load");
+		       Terminal.rawMode();
+		       
+	       }
 
         }
 
