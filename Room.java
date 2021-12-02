@@ -66,6 +66,11 @@ public class Room {
 
         return enemies;
     }
+
+    /**
+     * Parses the map layout and then returns an array list of every portal present in the map, a portal contains it's position on the layout, and the room it takes you to.
+     * @return Arraylist of all portals in the layout.
+     */
     public ArrayList<Portal> getPortals() {
         World world=new World();
         ArrayList<Portal> portals = new ArrayList<Portal>();
@@ -110,9 +115,31 @@ public class Room {
         }
     }
 
+    /**
+     * Returns the Current Rooms World Difficulty
+     * @return The worldDifficulty of the current room in string format.
+     */
     public worldDifficulty getWorldDifficulty() {
         return this.worldDifficulty;
     }
+    //Make this return a string rather than printing inside method, Otherwise Java get angry.
+    public String printWorldDifficulty() {
+String response="";
+        if (this.worldDifficulty==worldDifficulty.Easy){
+            response="Easy";
+            System.out.println("Easy");
+
+        }else if(this.worldDifficulty== worldDifficulty.Normal){
+            response="Normal";
+            System.out.println("Normal");
+        }else if(this.worldDifficulty== worldDifficulty.Hard){
+            response="Hard";
+            System.out.println("Hard");
+
+        }
+     return response;
+    }
+
     public String[] getGrid(){
         return this.grid;
     }

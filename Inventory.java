@@ -206,10 +206,15 @@ public class Inventory {
             return items.get(realIndex);
         }
     }
+
+    /**
+     * Allows players to pick a healing item, it then heals the player for the items strength before removing the item from the players inventory.
+     * @param player The player being healed
+     */
     public void useItem(Player player){
        Item healingItem=pickItem(ItemType.Healing);
          player.heal(healingItem);
-         items.remove(healingItem);
+         this.items.remove(healingItem);
         }
 
 }

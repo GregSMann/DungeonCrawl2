@@ -77,6 +77,11 @@ public abstract class Character extends Entity {
         Terminal.getKey();
         return true;
     }
+
+    /**
+     * Heals the entity based on the strength of the item parsed in, Filter itemType in code that uses this to only allow Healing items.
+     * @param item The item used to heal the Entity, it's strength determines how much health is healed.
+     */
     public void heal(Item item){
         int value=this.getHealth();
         int itemStrength=item.getStrength();

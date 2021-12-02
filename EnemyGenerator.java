@@ -1,9 +1,19 @@
-// EnemyGenerator.java
-// this class contains a static method for creating enemies randomly
-
+/**EnemyGenerator.java
+*
+* this class contains a static method for creating enemies semi-randomly utilizing the Room the player is in to generate enemies of different difficulties.
+ * @author 240Group GMJ
+ * @version 1.0
+*/
 import java.util.Random;
 
 public class EnemyGenerator {
+    /**
+     * Generates an enemy using the current room to pick enemy strength
+     * @param row Enemies starting position on the X axis.
+     * @param col Enemies starting Position on the Y axis
+     * @param room Current Room that determines enemy strength.
+     * @return Returns a newly generated enemy with Strength, HP, and Protection based on the rooms difficulty.
+     */
     public static Enemy generate(int row, int col, Room room) {
         Enemy genEnemy=new Enemy("Lost Goblin",row,col,1,1,1);
         // TODO: replace this with your own code!

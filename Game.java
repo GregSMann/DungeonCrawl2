@@ -90,6 +90,10 @@ public class Game {
             Terminal.pause(1.25);
         }
     }
+
+    /**
+     * Checks the position under you for a portal, if there is a portal, it sets the current room to the destination room, then reinitilizes the room, checking boxes, enemies, and portals, before removing the old portal and redrawing the map.
+     */
     private void enter(){
         Portal door = checkForPortal();
         if (door == null){
@@ -256,6 +260,11 @@ public class Game {
 
         return true;
     }
+
+    /**
+     * Checks the current position for a portal, if there is a portal there it returns it, if not it returns a null value.
+     * @return Portal or Null depending on player position.
+     */
     private Portal checkForPortal() {
         Position playerLocation = player.getPosition();
 

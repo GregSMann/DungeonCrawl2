@@ -1,3 +1,8 @@
+/**Item generator.java
+ * Generates and returns an item for use in the playable component of the game.
+ * @author 240Group GMJ
+ * @version 1.0
+ */
 // ItemGenerator.java
 // this class contains a static method for creating items randomly
 
@@ -5,6 +10,11 @@
 import java.util.Random;
 
 public class ItemGenerator {
+    /**
+     * Generates a new item based on the room difficulty allowing for an increase in power in each room.
+     * @param room The room the player is currently in
+     * @return An Item suitable for the power level of that room.
+     */
     public static Item generate(Room room) {
         // TODO: replace this with your own code
         Item genItem=new Item(ItemType.Other, "Vase", 1,1,0);
