@@ -130,14 +130,17 @@ public class Game {
 		pw.println(player.getRow());
 		pw.println(player.getCol());
 		pw.println(room.getWorldDifficulty());
+		pw.println(enemies.length());
 
 		for (Enemy i : enemies){
 			pw.println(i.getName());
 			pw.println(i.getHealth());
+			//get enemy strength and defense
 			pw.println(i.getRow());
 			pw.println(i.getCol());
 
 		}
+		
 		//pw.println();
 		pw.println(player.getInventory().printItems());
 
@@ -164,6 +167,19 @@ public class Game {
 				newRoom = new Room(map3, worldDifficulty.Hard);
 				world.setCurrentRoom(newRoom);
 			}
+
+			numEnemies = in.nextLine();
+			int x = 0;
+			ArrayList<Enemy> newEnemies = new ArrayList<Enemy>;
+			while(x < numEnemies) {
+				String name = in.nextLine();
+				int Health = in.nextLine();
+				//add enemy strength and defense
+				int Row = in.nextLine();
+				int Col = in.nextLine();
+				newEnemy = EnemyGenerator.generate(Row, Col);
+				//make a new enemy generator method that takes more parameters and then call that here :)
+				x++;
 
 
 			Terminal.rawMode();
