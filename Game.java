@@ -242,12 +242,12 @@ public class Game {
 			pw.close();
 			
 			Terminal.rawMode();
-			System.out.println("Press any Key to Return");
 
 		}catch (FileNotFoundException e) {
 			System.out.println("Failed to save file!");
 			Terminal.rawMode();
 		}
+		break;
 	    //key to load a game " not completed"
 	    case l:
 	       Scanner scanner = new Scanner(System.in);
