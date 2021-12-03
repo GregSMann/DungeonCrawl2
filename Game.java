@@ -118,6 +118,11 @@ public class Game {
         }
     }
     //method to save the game info into a file
+    /**
+     *Method to save the game's informtaion
+     @param PrintWriter
+     @return void
+     */
     public void save(PrintWriter pw){
     	pw.println(playerName1);
 	pw.println(playerAge1);
@@ -139,6 +144,11 @@ public class Game {
 
     
    }
+   /**
+    *Method to load in a previously saved game. Uses a saved text file with saved speceific information to generate a game
+   @return void 
+    *
+    */
    //Method code to load a saved game
    public void load(){
    	
@@ -162,6 +172,11 @@ public class Game {
     }
 
     // handle the key which was read - return false if we quit the game
+    /**
+     *Method to handle pressed key inputs
+     @param Key
+     @return boolean
+     */
     private boolean handleKey(Key key) {
         switch (key) {
 //need to place the save method into case s
@@ -311,7 +326,10 @@ public class Game {
 
         return null;
     }
-
+    /**
+     *Method to run the game
+     @param void
+     */
     public void run() {
         // draw these for the first time now
         redrawMapAndHelp();
