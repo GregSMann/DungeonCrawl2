@@ -1,4 +1,7 @@
 // Character.java
+/**
+ * Stores and manages all methods and information to combat
+ */
 
 import java.util.ArrayList;
 

@@ -13,6 +13,11 @@ public class Room {
     private int rows;
     private int cols;
 
+    /**
+     * Generates the room using the Layout for usage in generating the layout
+     * @param layout
+     * @param difficulty
+     */
     public Room(String[] layout, worldDifficulty difficulty) {
         // this initializes the room to one specific space
         rows = 30;
@@ -149,5 +154,7 @@ String response="";
         return grid[row].charAt(col) != '#';
     }
     }
+
+
 
 
