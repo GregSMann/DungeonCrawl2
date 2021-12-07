@@ -212,7 +212,7 @@ public class Game {
 				int weight = Integer.parseInt(itemString[3]);
 				int value = Integer.parseInt(itemString[4]);
 				int strength = Integer.parseInt(itemString[5]);
-				Item newItem = new Item(type, nameFull, weight, value, strength);
+				Item newItem = new Item(type, name, weight, value, strength);
 				player.getInventory().add(newItem);
 				x++;
 			}

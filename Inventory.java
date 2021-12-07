@@ -2,6 +2,7 @@
 // allows for storing some number of items for the player
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 import ansi_terminal.*;
@@ -217,14 +218,14 @@ public class Inventory {
      */
     public void useItem(Player player){
        Item healingItem=pickItem(ItemType.Healing);
-       if(healingItem.getName()=="Empty Bottle"){
+       if(Objects.equals(healingItem.getName(), "Empty Bottle")){
            System.out.println("That Bottle is empty find a health potion.");
-       }else
+       }else{
          player.heal(healingItem);
         System.out.println("You use the potion healing for "+healingItem.getStrength()+" bringing your full health to "+player.getHealth());
          this.items.remove(healingItem);
 
-        }
+        }}
 
 }
 
