@@ -19,6 +19,7 @@ public class Player extends Character {
         items.addAndEquip(new Item(ItemType.Weapon, "Flame Sword", 5, 12, 7));
         items.addAndEquip(new Item(ItemType.Armor, "Flame Armor", 15, 20, 3));
         items.addAndEquip(new Item(ItemType.Other,"Shiny Rock", 1, 1, 1));
+        items.add(new Item(ItemType.Healing, "Empty Bottle", 0,0,0));
         //end
         
     }

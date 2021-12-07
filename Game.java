@@ -120,7 +120,7 @@ public class Game {
 	//method to save the game info into a file
 	/**
 	 *Method to save the game's informtaion
-	 @param PrintWriter
+	 @param pw a printwriter.
 	 @return void
 	 */
 	public void save(PrintWriter pw){
@@ -152,7 +152,11 @@ public class Game {
 
 
 	}
-
+	/**
+	 *Method to load in a previously saved game. Uses a saved text file with saved speceific information to generate a game
+	 @return void
+	 * @param loadExt An external File that contains the data neccesary for the game to load
+	 **/
 	public void load(String loadExt) {
 		try {
 			Scanner in = new Scanner(new File("saves/save" + loadExt + ".txt"));
@@ -208,7 +212,7 @@ public class Game {
 				int weight = Integer.parseInt(itemString[3]);
 				int value = Integer.parseInt(itemString[4]);
 				int strength = Integer.parseInt(itemString[5]);
-				Item newItem = new Item(type, name, weight, value, strength);
+				Item newItem = new Item(type, nameFull, weight, value, strength);
 				player.getInventory().add(newItem);
 				x++;
 			}
@@ -218,12 +222,6 @@ public class Game {
 			Terminal.rawMode();
 		}
 	}
-	/**
-	 *Method to load in a previously saved game. Uses a saved text file with saved speceific information to generate a game
-	 @return void 
-	 *
-	 */
-
 
 	// code for when the player tries to drop an item
 	private void drop() {

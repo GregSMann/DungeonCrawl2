@@ -217,8 +217,13 @@ public class Inventory {
      */
     public void useItem(Player player){
        Item healingItem=pickItem(ItemType.Healing);
+       if(healingItem.getName()=="Empty Bottle"){
+           System.out.println("That Bottle is empty find a health potion.");
+       }else
          player.heal(healingItem);
+        System.out.println("You use the potion healing for "+healingItem.getStrength()+" bringing your full health to "+player.getHealth());
          this.items.remove(healingItem);
+
         }
 
 }
