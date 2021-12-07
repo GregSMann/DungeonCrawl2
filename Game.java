@@ -204,7 +204,7 @@ public class Game {
 				}
 				String name1 = itemString[1];
 				String name2 = itemString[2];
-				String nameFull = name1 + ' ' + name2;
+				String name = name1 + ' ' + name2;
 				int weight = Integer.parseInt(itemString[3]);
 				int value = Integer.parseInt(itemString[4]);
 				int strength = Integer.parseInt(itemString[5]);
