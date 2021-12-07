@@ -32,6 +32,10 @@ public class Inventory {
         }
     }
 
+    public void remove() { //removes an item from the players inventory
+	    items.remove(0);
+    }
+
     // this method not only adds the item, but equips it into the correct slot
     // it is used for setting up the player's starting gear
     public void addAndEquip(Item item) {
