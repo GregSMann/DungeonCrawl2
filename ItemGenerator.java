@@ -11,9 +11,10 @@ import java.util.Random;
 
 public class ItemGenerator {
     /**
-     * Generates a new item based on the room difficulty allowing for an increase in power in each room.
+     * Generates a new item based on the room difficulty allowing for an increase in power in each room. All Item names must be two words.
      * @param room The room the player is currently in
      * @return An Item suitable for the power level of that room.
+     *
      */
     public static Item generate(Room room) {
         // TODO: replace this with your own code
