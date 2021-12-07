@@ -209,7 +209,7 @@ public class Game {
 	// handle the key which was read - return false if we quit the game
 	/**
 	 *Method to handle pressed key inputs
-	 @param Key
+	 @param key
 	 @return boolean
 	 */
 	private boolean handleKey(Key key) {
@@ -357,7 +357,6 @@ public class Game {
 	}
 	/**
 	 *Method to run the game
-	 @param void
 	 */
 	public void run() {
 		// draw these for the first time now

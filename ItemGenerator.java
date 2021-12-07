@@ -17,7 +17,7 @@ public class ItemGenerator {
      */
     public static Item generate(Room room) {
         // TODO: replace this with your own code
-        Item genItem=new Item(ItemType.Other, "Vase", 1,1,0);
+        Item genItem=new Item(ItemType.Other, "Dull Vase", 1,1,0);
         // TODO: replace this with your own code!
         if (room.getWorldDifficulty() == worldDifficulty.Easy) {
 
@@ -29,14 +29,14 @@ public class ItemGenerator {
                     genItem=new Item(ItemType.Weapon, "Enchanted sword", 5, 10, 10);
                     break;
                 case 2:
-                    genItem=new Item(ItemType.Armor, "Mythril Steel Plate", 10, 10, 5);
+                    genItem=new Item(ItemType.Armor, "Mythril Plate", 10, 10, 5);
                     break;
                 case 3:
                     genItem=new Item(ItemType.Other, "Golden coin", 1, 20, 0);
                     break;
 
                 case 4:
-                    genItem=new Item(ItemType.Healing, "Weak Healing Potion", 1, 30, 10);
+                    genItem=new Item(ItemType.Healing, "Weak Potion", 1, 30, 10);
                     break;
             }
         }
@@ -46,13 +46,13 @@ public class ItemGenerator {
             switch (b) {
 
                 case 1:
-                    genItem=new Item(ItemType.Weapon, "Sword of Epic Monster Slaying", 5, 40, 15);
+                    genItem=new Item(ItemType.Weapon, "Divine Sword", 5, 40, 15);
                     break;
                 case 2:
                     genItem=new Item(ItemType.Other, "Mystic Medallion", 1, 80, 0);
                     break;
                 case 3:
-                    genItem=new Item(ItemType.Armor, "Mage Armor Marker", 2, 60, 9);
+                    genItem=new Item(ItemType.Armor, "Mage Armor", 2, 60, 9);
 
                     break;
                 case 4:
@@ -70,15 +70,15 @@ public class ItemGenerator {
 
                     break;
                 case 2:
-                    genItem=new Item(ItemType.Weapon, "Sword of One Thousand Truths", 1, 20, 30);
+                    genItem=new Item(ItemType.Weapon, "Master Sword", 1, 20, 30);
 
                     break;
                 case 3:
-                    genItem=new Item(ItemType.Other, "Armor of the Last Bastion", 1, 20, 15);
+                    genItem=new Item(ItemType.Other, "Mjolnir Armor", 1, 20, 15);
 
                     break;
                 case 4:
-                    genItem=new Item(ItemType.Healing, "Potion of Full Restoration", 1, 20, 150);
+                    genItem=new Item(ItemType.Healing, "Hyper Potion", 1, 20, 150);
                     break;
             }
 
