@@ -143,6 +143,7 @@ public class Game {
 		
 		//pw.println();
 		ArrayList<String> saveItems = (player.getInventory().printItems());
+		pw.println(saveItems.size()); //how many items are in the players inventory
 		for (String element : saveItems) {
 			pw.println(element);
 		}
@@ -175,10 +176,40 @@ public class Game {
 				int Row = Integer.parseInt(in.nextLine());
 				int Col = Integer.parseInt(in.nextLine());
 				Enemy newEnemy = EnemyGenerator.generate(Row, Col, newWorld);
+				newEnemies.add(newEnemy);
 				//make a new enemy generator method that takes more parameters and then call that here :)
 				x++;
 			}
-
+			int numItems = Integer.parseInt(in.nextLine());
+			x = 0;
+			ArrayList<String> currentInventory = player.getInventory().printItems();
+			int currentSize = currentInventory.size();
+			while(x < currentSize) {
+			player.getInventory().remove();
+			x++;
+			}
+			x = 0;
+			while(x < numItems) {
+				String[] itemString = in.nextLine().split("\\s+"); //splits each item by whitespace and adds it to the string array
+				String typeString = itemString[0];
+				ItemType type = null;
+				if (typeString.equals("Weapon")) {
+					type = ItemType.Weapon;
+				} else if (typeString.equals("Armor")) {
+					type = ItemType.Armor;
+				} else if (typeString.equals("Other")) {
+					type = ItemType.Other;
+				} else if (typeString.equals("Healing")) {
+					type = ItemType.Healing;
+				}
+				String name = itemString[1];
+				int weight = Integer.parseInt(itemString[2]);
+				int value = Integer.parseInt(itemString[3]);
+				int strength = Integer.parseInt(itemString[4]);
+				Item newItem = new Item(type, name, weight, value, strength);
+				player.getInventory().add(newItem);
+				x++;
+			}
 			Terminal.rawMode();
 		} catch (FileNotFoundException d) {
 			System.out.println("Failed to load file");
