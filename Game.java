@@ -130,7 +130,7 @@ public class Game {
 		pw.println(player.getRow());
 		pw.println(player.getCol());
 		pw.println(room.getWorldDifficulty());
-		pw.println(enemies.length());
+		pw.println(enemies.size());
 
 		for (Enemy i : enemies){
 			pw.println(i.getName());
@@ -142,7 +142,11 @@ public class Game {
 		}
 		
 		//pw.println();
-		pw.println(player.getInventory().printItems());
+		ArrayList<String> saveItems = (player.getInventory().printItems());
+		for (String element : saveItems) {
+			pw.println(element);
+		}
+
 
 
 
@@ -152,35 +156,28 @@ public class Game {
 		try {
 			Scanner in = new Scanner(new File("saves/save" + loadExt + ".txt"));
 			playerName1 = in.nextLine();
-			playerAge1 = in.nextLine();
-			player.setHealth() = in.nextLine();
-			player.setRow() = in.nextLine();
-			player.setCol() = in.nextLine();
-			worldDiff = in.nextLine();
-			if (worldDiff.equals("Easy")) {
-				newRoom = new Room(map1, worldDifficulty.Easy);
-				world.setCurrentRoom(newRoom);
-			} else if (worldDiff.equals("Medium") {
-				newRoom = new Room(map2, worldDifficulty.Medium);
-				world.setCurrentRoom(newRoom);
-			} else if (worldDiff.equals("Hard") {
-				newRoom = new Room(map3, worldDifficulty.Hard);
-				world.setCurrentRoom(newRoom);
-			}
+			playerAge1 = Integer.parseInt(in.nextLine());
+			player.setHealth(Integer.parseInt(in.nextLine()));
+			int newRow = (Integer.parseInt(in.nextLine()));
+			int newCol = (Integer.parseInt(in.nextLine()));
+			player.setPosition(newRow, newCol);
+			String worldDiff = in.nextLine();
+			Room newWorld = world.createNewRoom(worldDiff);
+			world.setCurrentRoom(newWorld);
 
-			numEnemies = in.nextLine();
+			int numEnemies = Integer.parseInt(in.nextLine());
 			int x = 0;
-			ArrayList<Enemy> newEnemies = new ArrayList<Enemy>;
+			ArrayList<Enemy> newEnemies = new ArrayList<Enemy>();
 			while(x < numEnemies) {
 				String name = in.nextLine();
-				int Health = in.nextLine();
+				int Health = Integer.parseInt(in.nextLine());
 				//add enemy strength and defense
-				int Row = in.nextLine();
-				int Col = in.nextLine();
-				newEnemy = EnemyGenerator.generate(Row, Col);
+				int Row = Integer.parseInt(in.nextLine());
+				int Col = Integer.parseInt(in.nextLine());
+				Enemy newEnemy = EnemyGenerator.generate(Row, Col, newWorld);
 				//make a new enemy generator method that takes more parameters and then call that here :)
 				x++;
-
+			}
 
 			Terminal.rawMode();
 		} catch (FileNotFoundException d) {

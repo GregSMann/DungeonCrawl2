@@ -13,6 +13,10 @@ public abstract class Character extends Entity {
         this.hp = hp;
     }
 
+    public void setHealth(int newHealth) {
+	    hp = newHealth;
+    }
+
 
     // get the hp, damage, protection and name of character
     public int getHealth() {

@@ -122,8 +122,20 @@ public class World {
      * @return Returns the current room variable.
      */
     public Room getCurrentRoom(){ return this.currentRoom; }
+
+
+    public Room createNewRoom(String difficulty) {
+	    if (difficulty.equals("Easy")) {
+		    Room newRoom = new Room(map1, worldDifficulty.Easy);
+		    return newRoom;
+	    } else if (difficulty.equals("Normal")) {
+		    Room newRoom = new Room(map2, worldDifficulty.Normal);
+		    return newRoom;
+	    } else if (difficulty.equals("Hard")) {
+		    Room newRoom = new Room(map3, worldDifficulty.Hard);
+		    return newRoom;
+	    } else {
+		    return null;
+	    }
     }
-
-
-
-
+    }
