@@ -202,10 +202,12 @@ public class Game {
 				} else if (typeString.equals("Healing")) {
 					type = ItemType.Healing;
 				}
-				String name = itemString[1];
-				int weight = Integer.parseInt(itemString[2]);
-				int value = Integer.parseInt(itemString[3]);
-				int strength = Integer.parseInt(itemString[4]);
+				String name1 = itemString[1];
+				String name2 = itemString[2];
+				String nameFull = name1 + ' ' + name2;
+				int weight = Integer.parseInt(itemString[3]);
+				int value = Integer.parseInt(itemString[4]);
+				int strength = Integer.parseInt(itemString[5]);
 				Item newItem = new Item(type, name, weight, value, strength);
 				player.getInventory().add(newItem);
 				x++;
